@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CVE Database Application</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">CVE Database</h1>
+        <button class="btn btn-primary mb-3" id="addCveBtn">Add CVE</button>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>
+                        CVE-ID
+                        <button id="toggleCveIdSort" class="btn btn-sm btn-outline-secondary">
+                            <span id="cveIdSortIcon">⬆️</span>
+                        </button>
+                    </th>
+                    <th>
+                        Severity
+                        <button id="toggleSeveritySort" class="btn btn-sm btn-outline-secondary">
+                            <span id="severitySortIcon">⬆️</span>
+                        </button>
+                    </th>
+                    <th>
+                        CVSS
+                        <button id="toggleCvssSort" class="btn btn-sm btn-outline-secondary">
+                            <span id="cvssSortIcon">⬆️</span>
+                        </button>
+                    </th>
+                    <th>
+                        Affected Packages
+                        <button id="togglePackagesSort" class="btn btn-sm btn-outline-secondary">
+                            <span id="packagesSortIcon">⬆️</span>
+                        </button>
+                    </th>
+                    <th>
+                        CWE-ID
+                        <button id="toggleCweIdSort" class="btn btn-sm btn-outline-secondary">
+                            <span id="cweIdSortIcon">⬆️</span>
+                        </button>
+                    </th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="cveTableBody">
+                <!-- CVE records will be dynamically inserted here -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Add/Edit CVE Modal -->
+    <div class="modal fade" id="cveModal" tabindex="-1" aria-labelledby="cveModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cveModalLabel">Add/Edit CVE Record</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="cveForm">
+                        <div class="form-group">
+                            <label for="cveId">CVE-ID</label>
+                            <input type="text" class="form-control" id="cveId" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="severity">Severity</label>
+                            <select class="form-control" id="severity" required>
+                                <option value="CRITICAL">CRITICAL</option>
+                                <option value="HIGH">HIGH</option>
+                                <option value="MEDIUM">MEDIUM</option>
+                                <option value="LOW">LOW</option>
+                                <option value="UNKNOWN">UNKNOWN</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="cvss">CVSS</label>
+                            <input type="number" step="0.1" class="form-control" id="cvss" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="affectedPackages">Affected Packages</label>
+                            <input type="text" class="form-control" id="affectedPackages" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cweId">CWE-ID</label>
+                            <input type="text" class="form-control" id="cweId" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary" id="saveCveBtn">Save</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
