@@ -16,5 +16,5 @@ This project is a responsive web-based CVE database application that allows user
 - Clone the Repository
 - Open VS Code
 - Open index.html file 
-- Click on Go Live Option or if it is not enabled in you VS Code then add it from the extension box.
+- Click on Go Live Option or if it is not enabled in your VS Code then add it from the extension box.
 
