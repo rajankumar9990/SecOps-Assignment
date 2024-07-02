@@ -13,7 +13,8 @@ This project is a responsive web-based CVE database application that allows user
 - Bootstrap
 - JavaScript
 ## Setup and Running the Project
--Clone the Repository
--Open VS Code
--Open index.html file 
--Click on Go Live Option or if it is not enabled in you VS Code then add it from the extension box.
+- Clone the Repository
+- Open VS Code
+- Open index.html file 
+- Click on Go Live Option or if it is not enabled in you VS Code then add it from the extension box.
+
